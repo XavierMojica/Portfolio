@@ -1,6 +1,6 @@
 #Non Parametric Test 
 #  -sqewness is too much and no amount of transforming helps
-#  - large violations in variances between sample 
+#  -large violations in variances between sample 
 #  -samples too small  
 # It doesn't assume that data come from Normal population just assumes INDEPENDENCE 
 library(stats)
