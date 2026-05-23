@@ -10,9 +10,9 @@ mydata = data.frame(vars = testMethod, nums = scores)
 print(mydata)
 
 #Wilcoxon Rank Sum Test 
-wilcox.test(scores~testMethod, alternative = "two.sided")
+wilcox.test(scores~testMethod, alternative = "greater")#two.sided, less, greater
 #wilcoxon rank sum test with exact 
-wilcox.test(scores~testMethod, exact = TRUE, alternative = 'two.sided')
+wilcox.test(scores~testMethod, exact = TRUE, alternative = 'greater') #careful with EXACT bc can crash with more Ns
 
 
 #Ho: The median of New Method Scores = The median of the Traditional Method Scores 
