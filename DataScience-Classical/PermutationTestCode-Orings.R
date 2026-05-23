@@ -10,7 +10,7 @@ Temp = c('Warm','Warm','Warm','Warm','Warm','Warm','Warm','Warm','Warm','Warm','
 Orings = data.frame(Failures = Failures, Temp = Temp)
 
 
-t.test(Orings$Failures ~ Orings$Temp) #just to see how bad it is to use this test bc we shouldn't make this error in this example
+#THE T TEST is not Appropriate for this type of examples !!!
 
 
 numberofPermutations = 10000
