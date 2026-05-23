@@ -1,3 +1,8 @@
+#Non Parametric Test 
+#  -sqewness is too much and no amount of transforming helps
+#  - large violations in variances between sample 
+#  -samples too small  
+# It doesn't assume that data come from Normal population just assumes INDEPENDENCE 
 library(stats)
 
 #DF, testMethod using new or traditional and scores from individual subjects 
@@ -22,3 +27,6 @@ wilcox.test(scores~testMethod, exact = TRUE, alternative = 'greater') #careful w
 #There is sufficient evidence at the alpha = 0.1 level of significance (p-value = .0571 for the exact test for the Wilcoxon Rank Sum Test) 
 #to suggest that the median of IBM employees that were given the New Method is greater than the median of those who took the test having had 
 #the Traditional Method of instruction. 
+
+
+#
