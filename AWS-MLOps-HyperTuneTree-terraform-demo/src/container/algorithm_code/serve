@@ -5,7 +5,6 @@
 #
 #
 # Parameter                Environment Variable              Default Value
-# ---------                --------------------              -------------
 # number of workers        MODEL_SERVER_WORKERS              the number of CPU cores
 # timeout                  MODEL_SERVER_TIMEOUT              60 seconds
 
@@ -51,7 +50,7 @@ def start_server():
 
     signal.signal(signal.SIGTERM, lambda a, b: sigterm_handler(nginx.pid, gunicorn.pid))
 
-    # If either subprocess exits, so do we.
+    # If either subprocess exits
     pids = set([nginx.pid, gunicorn.pid])
     while True:
         pid, _ = os.wait()
@@ -61,7 +60,7 @@ def start_server():
     sigterm_handler(nginx.pid, gunicorn.pid)
     print('Inference server exiting')
 
-# The main routine just invokes the start function.
+#invokes the start function
 
 if __name__ == '__main__':
     start_server()
