@@ -1,4 +1,4 @@
-## Change project_name to your project name
+## Change project_name to theproject name
 project_name = "ml-pipeline-terraform-demo" //project name here
 region = "us-west-1" //choose regoin to deploy in another region ie us-east-1 
 
