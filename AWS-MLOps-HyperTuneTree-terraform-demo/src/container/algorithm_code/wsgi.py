@@ -1,7 +1,6 @@
 import predictor as myapp
 
-# This is just a simple wrapper for gunicorn to find your app.
-# If you want to change the algorithm file, simply change "predictor" above to the
-# new file.
+# This is just a simple wrapper for gunicorn to find your app
+#change "predictor" above to change the algorithm fil
 
 app = myapp.app
