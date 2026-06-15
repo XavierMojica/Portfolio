@@ -3,7 +3,7 @@ FROM python:3.10-slim
 #this avoids issues 
 
 # first layers should be dependency install so changes in code won't cause the build to
-# start from scratch.
+
 COPY requirements.txt /opt/program/requirements.txt
 
 RUN apt-get -y update && apt-get install -y --no-install-recommends \
