@@ -77,78 +77,11 @@ SOURCE seed_data.sql;
 
 Alternatively, you can copy and paste the SQL from each file directly into your SQL editor and execute it in order.
 
-## Suggested File Naming
-
-Before publishing to GitHub, rename the original files for clarity:
-
-```text
-Basketball SetUP2.sql        -> schema.sql
-Basketball_InsertData(1).sql -> seed_data.sql
-```
-
-Avoid spaces, parentheses, and inconsistent capitalization in file names.
-
 ## Important Notes
 
 This project uses sample basketball data for educational purposes. Any names or addresses included in the seed data should be treated as fictional sample data.
 
-If publishing publicly, consider replacing address fields with generic sample values such as:
 
-```text
-Address 001
-Sample City
-ST
-00000
-```
-
-## Recommended Fixes Before Publishing
-
-Before uploading this project to GitHub, review the following items:
-
-### 1. Rename `TurneyLocation`
-
-The column name `TurneyLocation` appears to be a typo. It should be renamed to:
-
-```sql
-TourneyLocation
-```
-
-### 2. Fix the `ALTER TABLE TourneyMatches` statement
-
-The foreign key section should be written as one complete statement:
-
-```sql
-ALTER TABLE TourneyMatches
-ADD CONSTRAINT TourneyMatches_FK00 FOREIGN KEY (HomeTeam) REFERENCES Teams(TeamID),
-ADD CONSTRAINT TourneyMatches_FK01 FOREIGN KEY (AwayTeam) REFERENCES Teams(TeamID),
-ADD CONSTRAINT TourneyMatches_FK02 FOREIGN KEY (WinningTeam) REFERENCES Teams(TeamID);
-```
-
-### 3. Add a composite primary key to `Scores`
-
-To prevent duplicate score records for the same player in the same game, consider updating the `Scores` table:
-
-```sql
-CREATE TABLE Scores (
-    GameID int NOT NULL,
-    PlayerID int NOT NULL,
-    PlayerScore int NULL DEFAULT 0,
-    PRIMARY KEY (GameID, PlayerID),
-    FOREIGN KEY (GameID) REFERENCES TourneyMatches(GameID),
-    FOREIGN KEY (PlayerID) REFERENCES Players(PlayerID)
-);
-```
-
-### 4. Add a warning above `DROP DATABASE`
-
-The schema file recreates the database, so add a warning comment:
-
-```sql
--- WARNING: This script drops and recreates the BasketBall database.
-DROP DATABASE IF EXISTS BasketBall;
-CREATE DATABASE BasketBall;
-USE BasketBall;
-```
 
 ## Skills Demonstrated
 
